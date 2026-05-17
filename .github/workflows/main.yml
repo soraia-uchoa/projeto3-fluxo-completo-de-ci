@@ -20,7 +20,7 @@ jobs:
           node-version: 22
 
       - name: instalar dependências
-        run: npm install
+        run: npm i
 
       - name: executar testes
         run: npm test
