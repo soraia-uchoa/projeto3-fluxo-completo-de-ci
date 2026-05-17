@@ -1,4 +1,4 @@
-name: CI
+name: Notes CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - develop
 
 jobs:
-  test-decoder:
+  test-notes:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,5 +22,5 @@ jobs:
       - name: instalar dependências
         run: npm install
 
-      - name: rodar build
-        run: npm run build
+      - name: executar testes
+        run: npm test

@@ -5,4 +5,12 @@ function addNote(name){
     return `Tarefa ${name} adicionada`
 }
 
-module.export = addNote
+function deleteNote(name){
+    if(notes.includes(name)){
+        notes.splice(name)
+
+        return `Tarefa ${name} apagada com sucesso`
+    }
+}
+
+module.exports = {addNote, deleteNote}
