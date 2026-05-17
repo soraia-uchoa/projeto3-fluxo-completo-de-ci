@@ -1,0 +1,26 @@
+name: Notes CI
+
+on:
+  push:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  test-notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: baixar código
+        uses: actions/checkout@v4
+
+      - name: instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: instalar dependências
+        run: npm i
+
+      - name: executar testes
+        run: npm test
