@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  test-decoder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: baixar código
+        uses: actions/checkout@v4
+
+      - name: instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: instalar dependências
+        run: npm install
+
+      - name: rodar build
+        run: npm run build
